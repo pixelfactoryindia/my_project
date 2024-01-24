@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the statement
     if ($stmt->execute()) {
-        echo "New record added successfully";
+        echo "New Record added successfully";
     } else {
         echo "Error: " . $stmt->error;
     }

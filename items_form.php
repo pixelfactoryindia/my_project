@@ -1,3 +1,43 @@
+<?php
+// Check if the form was submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Include your database connection settings
+    require_once 'db_config.php'; // config file
+
+    // Get the form data
+    $move_date = $_POST['move_date'] ?? '';
+    // Check if the date is valid
+    if (DateTime::createFromFormat('m/d/Y', $move_date) !== false) {
+        // It's a valid date
+        // Establish a new database connection
+        $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        $move_date = DateTime::createFromFormat('m/d/Y', $move_date)->format('Y-m-d');
+        // Prepare an INSERT statement
+        $stmt = $conn->prepare("INSERT INTO quotes (move_date) VALUES (?)");
+        $stmt->bind_param("s", $move_date);
+
+        // Execute the statement
+        if ($stmt->execute()) {
+            echo "New Record added successfully: " . $move_date;
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+
+        // Close statement and connection
+        $stmt->close();
+        $conn->close();
+    } else {
+        echo "Invalid date format.". $move_date;;
+        // Handle the error, perhaps set a default value or skip the insertion
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,6 +91,14 @@ function goBack() {
                 <div class="quantity">
                     <button type="button" class="minus" onclick="updateQuantity(this, -1)">-</button>
                     <input type="text" name="singlewardrobe" value="0" readonly>
+                    <button type="button" class="plus" onclick="updateQuantity(this, 1)">+</button>
+                </div>
+            </div>
+            <div class="item">
+                <span class="item-name">Dressing Table</span>
+                <div class="quantity">
+                    <button type="button" class="minus" onclick="updateQuantity(this, -1)">-</button>
+                    <input type="text" name="dressingtable" value="0" readonly>
                     <button type="button" class="plus" onclick="updateQuantity(this, 1)">+</button>
                 </div>
             </div>

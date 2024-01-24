@@ -74,7 +74,7 @@ function goBack() {
     </div>
 
     <!-- Items List -->
-    <form id="item-selection-form" action="submit.php" method="post" >
+    <form id="item-selection-form" action="prices_calendar.php" method="post" >
         <div class="items">
             <!-- Repeat this block for each item -->
             <div class="item">

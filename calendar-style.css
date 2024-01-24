@@ -1,0 +1,119 @@
+.calendar-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.month {
+    margin-bottom: 30px;
+}
+
+.month ul {
+    padding: 0;
+    margin: 0;
+    background-color: #eee;
+    border-radius: 8px;
+}
+
+.month li {
+    color: #555;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.month .prev, 
+.month .next {
+    padding: 4px 10px;
+    background: #ddd;
+    border-radius: 50%;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.weekdays {
+    background-color: #f9f9f9;
+    color: #666;
+    padding: 10px 0;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 14.28%;
+    padding: 5px;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.days li {
+    display: inline-block;
+    width: 14.28%;
+    padding: 10px;
+    margin: 0;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.days li:not(.empty) {
+    border: 1px solid #eee;
+    vertical-align: top;
+}
+
+.days li:hover {
+    background-color: #f0f0f0;
+}
+
+.days li .price {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: #e2e2e2;
+    padding: 5px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.days li.today {
+    background-color: #ffeded;
+    color: #d9534f;
+}
+
+.days li.today .price {
+    background: #d9534f;
+    color: #fff;
+}
+
+.edit-job, .next-step {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5cb85c;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-job:hover, 
+.next-step:hover {
+    background-color: #4cae4c;
+}
+
+.edit-job {
+    background-color: #f0ad4e;
+}
+
+.edit-job:hover {
+    background-color: #ec971f;
+}

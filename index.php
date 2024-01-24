@@ -40,6 +40,7 @@ function getLocation(element) {
                 <option value="">What are you moving?</option>
                 <option value="furniture">Furniture & Appliances</option>
                 <option value="homeremove">Home Removals</option>
+                <option value="boxes">Boxes</option>
                 <!-- Add more options here -->
             </select>
         </div>

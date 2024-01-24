@@ -1,0 +1,8 @@
+CREATE TABLE `quotes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item` varchar(255) NOT NULL,
+  `pickup_location` varchar(255) NOT NULL,
+  `dropoff_location` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
